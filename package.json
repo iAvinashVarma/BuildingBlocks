@@ -1,0 +1,14 @@
+{
+  "name": "buildingblocks",
+  "version": "1.0.0",
+  "description": "Building Blocks ground zero tutorial from CodeSchool.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Avinash Varma Kalidindi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.1"
+  }
+}

@@ -11,6 +11,18 @@ describe('Request to the root path', function(){
 				done();
 			});
 	});
+
+	it('Returns a HTML format', function(done){
+		request(app)
+		.get('/')
+		.expect('Content-Type', /html/, done); 
+	});
+
+	it('Returns an index file with cities', function(done){
+		request(app)
+		.get('/')
+		.expect(/cities/i, done);
+	})
 });
 
 describe('Listing cities on /cities', function(){
@@ -22,6 +34,12 @@ describe('Listing cities on /cities', function(){
 	it('Returns JSON Format', function(done){
 		request(app)
 		.get('/cities')
-		.expect('Content-Type', 'application/json; charset=utf-8', done);
-	})
+		// .expect('Content-Type', 'application/json; charset=utf-8', done);
+		.expect('Content-Type', /json/, done);
+	});
+	it('Return initial cities', function(done){
+		request(app)
+		.get('/cities')
+		.expect(JSON.stringify(['Hyderabad','Bangalore','Chennai']), done);
+	});
 });	

@@ -17,7 +17,17 @@ C:\BuildingBlocks> npm install express
 C:\BuildingBlocks> npm install express@4.9
 C:\BuildingBlocks> npm install express@3.15.2
 ```
+### Install Redis
 
+```
+Go to https://github.com/MicrosoftArchive/redis
+```
+
+### Install Heroku
+
+```
+Go to https://devcenter.heroku.com/articles/heroku-cli#windows
+```
 
 # APIs
 

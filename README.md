@@ -29,8 +29,20 @@ Go to https://github.com/MicrosoftArchive/redis
 Go to https://devcenter.heroku.com/articles/heroku-cli#windows
 ```
 
+### Install Node Modules from package.json
+
+```
+C:\BuildingBlocks> npm install
+```
 # APIs
 
 | API  | Link |
 | ------ | ------ |
 | Express | https://expressjs.com/ |
+
+# CLIs
+
+| CLI  | Link |
+| ------ | ------ |
+| Redis | https://redis.io/ |
+| Heroku | https://www.heroku.com/ |

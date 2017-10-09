@@ -19,21 +19,23 @@ C:\BuildingBlocks> npm install express@3.15.2
 ```
 ### Install Redis
 
-```
-Go to https://github.com/MicrosoftArchive/redis
-```
+Go to [Installation of Redis in Windows](https://github.com/MicrosoftArchive/redis)
 
 ### Install Heroku
 
-```
-Go to https://devcenter.heroku.com/articles/heroku-cli#windows
-```
+Go to [Installation of Heroku in Windows](https://devcenter.heroku.com/articles/heroku-cli#windows)
+
 
 ### Install Node Modules from package.json
 
 ```
 C:\BuildingBlocks> npm install
 ```
+
+### Useful Links
+
+[About NODE_ENV in Windows](https://stackoverflow.com/questions/11928013/node-env-is-not-recognized-as-an-internal-or-external-command-operable-comman)
+
 # APIs
 
 | API  | Link |

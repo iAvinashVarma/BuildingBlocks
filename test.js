@@ -1,6 +1,9 @@
 var request = require('supertest');
 var app = require('./app');
-
+var redis = require('redis');
+var client = redis.createClient();
+client.select('test'.length);
+client.flushdb();
 describe('Request to the root path', function(){
 	it('Returns a 200 status code', function(done){
 		request(app)
@@ -40,6 +43,24 @@ describe('Listing cities on /cities', function(){
 	it('Return initial cities', function(done){
 		request(app)
 		.get('/cities')
-		.expect(JSON.stringify(['Hyderabad','Bangalore','Chennai']), done);
+		.expect(JSON.stringify([]), done);
 	});
-});	
+});
+
+describe('Creating new cities', function(){
+	before(function(){
+
+	});
+	it('Returns 201 status code', function(done){
+		request(app)
+		.post('/cities')
+		.send('name=Amaravathi&description=Capital+Of+Andhra+Pradesh')
+		.expect(201, done);
+	})
+	it('Returns the city name', function(done){
+		request(app)
+		.post('/cities')
+		.send('name=Amaravathi&description=Capital+Of+Andhra+Pradesh')
+		.expect(/amaravathi/i, done);
+	});
+})

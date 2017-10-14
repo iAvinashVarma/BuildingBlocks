@@ -105,3 +105,13 @@ input[type="submit"] {
   float: left;
   padding-right: 10px;
 }
+.error{
+  margin: auto;
+  font-size: 16px;
+  padding: 1px;
+  text-align: center;
+  background: #800000;
+  border: solid 1px #800000;
+  color: #ffffff;
+  border-radius: 3px;
+}

@@ -1,27 +1,30 @@
 $(function(){
-
+  $('.error').hide();
   $.get('/cities', appendToList);
 
   $('form').on('submit', function(event) {
     event.preventDefault();
-
     var form = $(this);
-    var blockData = form.serialize();
-
+    var cityData = form.serialize();
+    $('.error').hide();
     $.ajax({
-      type: 'POST', url: '/cities', data: blockData
-    }).done(function(blockName){
-      appendToList([blockName]);
+      type: 'POST', url: '/cities', data: cityData
+    })
+    .error(function(){
+      $('.error').show();
+    })
+    .success(function(cityName){
+      appendToList([cityName]);
       form.trigger('reset');
     });
   });
 
-  function appendToList(blocks) {
+  function appendToList(cities) {
     var list = [];
     var content, block;
-    for(var i in blocks){
-      block = blocks[i];
-      content = '<a href="/blocks/'+block+'">'+block+'</a>'+ // + // example on how to serve static images
+    for(var i in cities){
+      block = cities[i];
+      content = '<a href="/cities/'+block+'">'+block+'</a>'+ // + // example on how to serve static images
         ' <a href="#" data-block="'+block+'">'+
         '<img src="delete.png" width="15px"></a>';
       list.push($('<li>', { html: content }));

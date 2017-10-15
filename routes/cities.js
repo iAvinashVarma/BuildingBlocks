@@ -44,7 +44,7 @@ citiesrouter.route('/:name')
 
     .get(function(request, response){
         client.hget('cities', request.params.name, function(error, description){
-            response.render('show.ejs', 
+            response.render('cities', 
             { city:
                 { name: request.params.name, description: description }
             });

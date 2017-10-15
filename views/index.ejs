@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Building Blocks</title>
-  <link rel="stylesheet" href="style.css" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="stylesheets/style.css" />
 </head>
 <body>
 
   <h1>Cities</h1>
 
   <form>
-    <div class="error">
+    <div class="error" style="display: none;">
       <p>Invalid City</p>
     </div>
     <br/>
@@ -20,7 +20,7 @@
     <input type="Submit">
   </form>
   <ul class='block-list'></ul>
-  <script src="jquery.js"></script>
-  <script src="client.js"></script>
+  <script src="javascripts/jquery.js"></script>
+  <script src="javascripts/client.js"></script>
 </body>
 </html>

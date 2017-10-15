@@ -1,5 +1,4 @@
 $(function(){
-  $('.error').hide();
   $.get('/cities', appendToList);
 
   $('form').on('submit', function(event) {
@@ -26,7 +25,7 @@ $(function(){
       block = cities[i];
       content = '<a href="/cities/'+block+'">'+block+'</a>'+ // + // example on how to serve static images
         ' <a href="#" data-block="'+block+'">'+
-        '<img src="delete.png" width="15px"></a>';
+        '<img src="/images/delete.png" width="15px"></a>';
       list.push($('<li>', { html: content }));
     }
 
@@ -35,7 +34,7 @@ $(function(){
 
 
   $('.block-list').on('click', 'a[data-block]', function (event) {
-    if(!confirm('Are you sure ?')){
+    if(!confirm('Are you sure to delete ?')){
       return false;
     }
 
